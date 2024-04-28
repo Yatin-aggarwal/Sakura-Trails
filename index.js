@@ -29,7 +29,12 @@ app.use("/verify",verify);
 
 
 
-
+app.get('/',(req,res)=>{
+   if(authorize(req.cookies.token)==1){
+      return  res.redirect("/home");
+      }
+   return res.render("Login");
+})
 app.get('/signup', (req,res)=>{
    return res.render("Signup");
 }); 
