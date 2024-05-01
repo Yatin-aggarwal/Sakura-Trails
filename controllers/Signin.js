@@ -6,7 +6,9 @@ firstname = firstname.toLowerCase()
 lastname = lastname.toLowerCase()
 email = email.toLowerCase()
 await Query.create({firstname , lastname , email , password});
-return res.status(200).redirect("/home");
+const token = Signup_cookie({firstname , lastname , email , password});
+res.cookie("token",token);
+return res.status(200).redirect("/");
 
 }
 async function Login(req,res){
@@ -17,6 +19,6 @@ async function Login(req,res){
     }
     const token = Signup_cookie(user);
     res.cookie("token",token);
-    return res.redirect("/home");
+    return res.redirect("/");
 }
 module.exports = {Signup, Login};

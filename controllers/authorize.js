@@ -1,6 +1,5 @@
 const {Login_cookie} = require('./JWT.js');
 function authorize(token){
-      console.log(token);
       if(token == undefined){
             return 0;
       }

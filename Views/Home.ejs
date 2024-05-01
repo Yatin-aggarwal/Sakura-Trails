@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Sakura Trails</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+  <div>
+    <nav style="height: 6vh; background-color: black; display:flex; align-items:center ; justify-content: space-between;">
+          <div style="padding-left: 1%;">
+                <a  href="/" >
+                  <img src="../favicon.ico" alt="Avatar Logo" style="width:40px;" class="rounded-pill"  > 
+               </a>
+              </div>
+              <div  style="display: flex; justify-content: right;">
+                <a class="nav-link" href="/"> <button type="button" class="btn btn-dark" style="height: 6vh; border-radius: 0;">Home</button></a>
+                <a class="nav-link" href="about"> <button type="button" class="btn btn-dark" style="height: 6vh; border-radius: 0;">About Us</button></a>
+                <a class="nav-link" href="contact"> <button type="button" class="btn btn-dark" style="height: 6vh; border-radius: 0;">Contact Us</button></a>
+                <a class="nav-link" href="package"> <button type="button" class="btn btn-dark" style="height: 6vh; border-radius: 0;">Package</button></a> 
+                
+              </div>
+    </nav>
+</div>
+      <div id="demo" class="carousel slide" data-bs-ride="carousel" >
+
+            <!-- Indicators/dots -->
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+              <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+              <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+              <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
+            </div>
+          
+            <!-- The slideshow/carousel -->
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="../Images/Mount Fiji.jpg" alt="Mount Fiji"  style="height: 94vh; width: 100vw">
+                <div class="carousel-caption">
+                  <h3>Mount Fuji</h3>
+                  <p>The mountains are calling and I must go!!</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                  <img src="../Images/Fushimi Inari Shrine.jpg" alt="Koyoto"  style="height: 94vh; width: 100vw;">
+                  <div class="carousel-caption">
+                    <h3 style="color: black;">Fushimi Inari Shrine</h3>
+                    <p style="color: black;">Kyoto. Kimono. Kawaii.</p>
+                  </div>
+              </div>
+              <div class="carousel-item">
+                <img src="../Images/Todaji.jpg" alt="nara"  style="height: 94vh; width: 100vw;">
+                <div class="carousel-caption">
+                  <h3>Todaji</h3>
+                  <p>Nanakorobi yaoki.</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                  <img src="../Images/Bamboo fores.jpg" alt="koyoto"  style="height: 94vh; width: 100vw;">
+                  <div class="carousel-caption">
+                  <h3>Bamboo Forest</h3>
+                  <p>Konnichiwa from Kyoto.</p>
+                </div>
+              </div>
+              
+
+              
+            </div>
+          
+            <!-- Left and right controls/icons -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </button>
+          </div>
+      
+</body>
+</html>

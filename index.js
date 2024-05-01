@@ -17,7 +17,6 @@ const authorize = require('./controllers/authorize.js');
 mongoose.connect(mongoURI);
 app = express();
 app.use(cookieParser());
-app.use(favicon(path.join(__dirname,  '22.ico')));
 app.use(express.urlencoded({extended: true}));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static("./")); 
@@ -27,11 +26,11 @@ app.set("views",path.resolve("Views") );
 app.use("/create",create);
 app.use("/verify",verify);
 
-
+app.use(favicon(path.join(__dirname,  'favicon.ico')));
 
 app.get('/',(req,res)=>{
    if(authorize(req.cookies.token)==1){
-      return  res.redirect("/home");
+      return  res.render("Home");
       }
    return res.render("Login");
 })
@@ -44,20 +43,28 @@ app.get('/login',(req, res)=>{
       }
    return res.render("Login");
 });
-app.get('/home',(req,res)=>{
-  if(authorize(req.cookies.token)==0){
-   return res.redirect("/login");
-  }
-  else{
-   return res.send("Welcome to home");
-  }
-});
+app.get('/contact',(req,res)=>{
+   if(authorize(req.cookies.token)==1){
+      return  res.render("Contact");
+      }
+   return res.render("Login");
+   
+})
+app.get('/package',(req,res)=>{
+   if(authorize(req.cookies.token)==1){
+      return  res.render("Package");
+      }
+   return res.render("Login");
+  
+})
 app.get('/about',(req,res)=>{
-   return  res.send("hi")
+   if(authorize(req.cookies.token)==1){
+      return  res.render("About");
+      }
+   return res.render("Login");
+  
 })
-app.use((req,res)=>{
-    return res.send("404 not found");
-})
+
 app.listen(8080, ()=>{
     "Webmail";
 })
